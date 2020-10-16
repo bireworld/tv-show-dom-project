@@ -162,7 +162,7 @@ btnShowCast.addEventListener("click", function () {
   //shows all casts
   if (showSelected.length === 0) {
     for (let j = 0; j < 100; j++) {
-      //show.length
+      
       let url = `http://api.tvmaze.com/shows/${show[j].id}?embed=cast`;
       fetch(url)
         .then(function (response) {
