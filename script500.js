@@ -1,10 +1,8 @@
-//let showSelected=document.getElementById("showSelected");
 let showContainer = document.getElementById("showContainer");
 let showBoundary = document.createElement("div");
 showBoundary.id = "showBoundary";
 let episodeContainer = document.getElementById("episode-container");
 let foundShowList = [];
-//let search=document.getElementById("search");
 home = document.createElement("button");
 btnShowCastBack = document.createElement("button");
 btnShowCastBack.textContent = "<<";
@@ -104,7 +102,7 @@ function showCast(arr) {
                 if (data.image.medium != null) {
                   let cast = document.createElement("div");
                   cast.classList.add("cast");
-                  let castPic = document.createElement("div");
+                  let castPicture = document.createElement("div");
 
                   let pic = document.createElement("img");
                   pic.setAttribute("style", "height:12rem;width:10rem");
@@ -112,17 +110,7 @@ function showCast(arr) {
                   castDetail.classList.add("classDetail");
 
                   pic.src = data.image.medium;
-                  castPic.appendChild(pic);
-
-                  // mainCast=document.createElement("div");
-                  // //alert(data[1632]._embedded.cast.length);
-                  // //._embedded.cast[0].person.image.mediumnt.createElement("div");
-                  // // mainPic=document.createElement("img");
-                  // // mainPic.src=data._embedded.cast.person.image.medium;
-                  // // mainCast.appendChild(mainPic);
-                  // // showCastDetail1.appendChild(mainCast);
-
-                  // console.log("+++++++++++"+data._embedded.cast[0].person.image.medium);
+                  castPicture.appendChild(pic);
                   p1 = document.createElement("p");
                   p1.textContent = "Show Name:" + data.name;
                   castDetail.appendChild(p1);
@@ -147,10 +135,10 @@ function showCast(arr) {
                   p4.textContent = "summary:" + data.summary;
                   castDetail.appendChild(p4);
                   cast.appendChild(castDetail);
-                  cast.appendChild(castPic);
+                  cast.appendChild(castPicture);
                   showCastDetail1.appendChild(cast);
                   showCastDetail.appendChild(showCastDetail1); //cast
-                  //console.log(cast.classList)
+                
                 }
               })
               .catch(function (error) {
@@ -171,7 +159,7 @@ btnShowCast.addEventListener("click", function () {
   showCastContainer.innerHTML = "";
   showBoundary.style.display = "none";
   showCastContainer.style.display = "block";
-  //all shows casts
+  //shows all casts
   if (showSelected.length === 0) {
     for (let j = 0; j < 100; j++) {
       //show.length
